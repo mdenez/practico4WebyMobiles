@@ -1,0 +1,7 @@
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\obj\Debug\TestConsole.csproj.AssemblyReference.cache
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\obj\Debug\TestConsole.csproj.CoreCompileInputs.cache
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\bin\Debug\TestConsole.exe.config
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\bin\Debug\TestConsole.exe
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\bin\Debug\TestConsole.pdb
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\obj\Debug\TestConsole.exe
+D:\ESTUDIO\UDE\8vo Semestre\Web y mobiles\practico 4\TestMyWeatherWebService\TestConsole\obj\Debug\TestConsole.pdb
