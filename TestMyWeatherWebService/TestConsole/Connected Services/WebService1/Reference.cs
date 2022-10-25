@@ -9,7 +9,104 @@
 //------------------------------------------------------------------------------
 
 namespace TestConsole.WebService1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="tipoError", Namespace="http://localhost")]
+    public enum tipoError : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CiudadYaExiste = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        CiudadNoExiste = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TemperaturaYaExisteEseDia = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        TemperaturaNoExisteEseDia = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OperacionExitosa = 4,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="VOTemperature", Namespace="http://localhost")]
+    [System.SerializableAttribute()]
+    public partial class VOTemperature : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CiudadField;
+        
+        private System.DateTime FechaField;
+        
+        private double TemperatureField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Ciudad {
+            get {
+                return this.CiudadField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CiudadField, value) != true)) {
+                    this.CiudadField = value;
+                    this.RaisePropertyChanged("Ciudad");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime Fecha {
+            get {
+                return this.FechaField;
+            }
+            set {
+                if ((this.FechaField.Equals(value) != true)) {
+                    this.FechaField = value;
+                    this.RaisePropertyChanged("Fecha");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public double Temperature {
+            get {
+                return this.TemperatureField;
+            }
+            set {
+                if ((this.TemperatureField.Equals(value) != true)) {
+                    this.TemperatureField = value;
+                    this.RaisePropertyChanged("Temperature");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://localhost", ConfigurationName="WebService1.WebService1Soap")]
@@ -21,6 +118,48 @@ namespace TestConsole.WebService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost/getTemperature", ReplyAction="*")]
         System.Threading.Tasks.Task<TestConsole.WebService1.getTemperatureResponse> getTemperatureAsync(TestConsole.WebService1.getTemperatureRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento city del espacio de nombres http://localhost no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/InsertCity", ReplyAction="*")]
+        TestConsole.WebService1.InsertCityResponse InsertCity(TestConsole.WebService1.InsertCityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/InsertCity", ReplyAction="*")]
+        System.Threading.Tasks.Task<TestConsole.WebService1.InsertCityResponse> InsertCityAsync(TestConsole.WebService1.InsertCityRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento vot del espacio de nombres http://localhost no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/InsertTemperature", ReplyAction="*")]
+        TestConsole.WebService1.InsertTemperatureResponse InsertTemperature(TestConsole.WebService1.InsertTemperatureRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/InsertTemperature", ReplyAction="*")]
+        System.Threading.Tasks.Task<TestConsole.WebService1.InsertTemperatureResponse> InsertTemperatureAsync(TestConsole.WebService1.InsertTemperatureRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento vot del espacio de nombres http://localhost no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/ModifyTemperature", ReplyAction="*")]
+        TestConsole.WebService1.ModifyTemperatureResponse ModifyTemperature(TestConsole.WebService1.ModifyTemperatureRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/ModifyTemperature", ReplyAction="*")]
+        System.Threading.Tasks.Task<TestConsole.WebService1.ModifyTemperatureResponse> ModifyTemperatureAsync(TestConsole.WebService1.ModifyTemperatureRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento city del espacio de nombres http://localhost no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/DeleteCity", ReplyAction="*")]
+        TestConsole.WebService1.DeleteCityResponse DeleteCity(TestConsole.WebService1.DeleteCityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/DeleteCity", ReplyAction="*")]
+        System.Threading.Tasks.Task<TestConsole.WebService1.DeleteCityResponse> DeleteCityAsync(TestConsole.WebService1.DeleteCityRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento city del espacio de nombres http://localhost no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/DeleteTemperature", ReplyAction="*")]
+        TestConsole.WebService1.DeleteTemperatureResponse DeleteTemperature(TestConsole.WebService1.DeleteTemperatureRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/DeleteTemperature", ReplyAction="*")]
+        System.Threading.Tasks.Task<TestConsole.WebService1.DeleteTemperatureResponse> DeleteTemperatureAsync(TestConsole.WebService1.DeleteTemperatureRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento city del espacio de nombres http://localhost no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/ListTempreaturesByCity", ReplyAction="*")]
+        TestConsole.WebService1.ListTempreaturesByCityResponse ListTempreaturesByCity(TestConsole.WebService1.ListTempreaturesByCityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/ListTempreaturesByCity", ReplyAction="*")]
+        System.Threading.Tasks.Task<TestConsole.WebService1.ListTempreaturesByCityResponse> ListTempreaturesByCityAsync(TestConsole.WebService1.ListTempreaturesByCityRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -46,13 +185,17 @@ namespace TestConsole.WebService1 {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
     public partial class getTemperatureRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public System.DateTime day;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
         public string city;
         
         public getTemperatureRequestBody() {
         }
         
-        public getTemperatureRequestBody(string city) {
+        public getTemperatureRequestBody(System.DateTime day, string city) {
+            this.day = day;
             this.city = city;
         }
     }
@@ -91,6 +234,422 @@ namespace TestConsole.WebService1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertCityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCity", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.InsertCityRequestBody Body;
+        
+        public InsertCityRequest() {
+        }
+        
+        public InsertCityRequest(TestConsole.WebService1.InsertCityRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class InsertCityRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string city;
+        
+        public InsertCityRequestBody() {
+        }
+        
+        public InsertCityRequestBody(string city) {
+            this.city = city;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertCityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCityResponse", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.InsertCityResponseBody Body;
+        
+        public InsertCityResponse() {
+        }
+        
+        public InsertCityResponse(TestConsole.WebService1.InsertCityResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class InsertCityResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public TestConsole.WebService1.tipoError InsertCityResult;
+        
+        public InsertCityResponseBody() {
+        }
+        
+        public InsertCityResponseBody(TestConsole.WebService1.tipoError InsertCityResult) {
+            this.InsertCityResult = InsertCityResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertTemperatureRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertTemperature", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.InsertTemperatureRequestBody Body;
+        
+        public InsertTemperatureRequest() {
+        }
+        
+        public InsertTemperatureRequest(TestConsole.WebService1.InsertTemperatureRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class InsertTemperatureRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TestConsole.WebService1.VOTemperature vot;
+        
+        public InsertTemperatureRequestBody() {
+        }
+        
+        public InsertTemperatureRequestBody(TestConsole.WebService1.VOTemperature vot) {
+            this.vot = vot;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class InsertTemperatureResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertTemperatureResponse", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.InsertTemperatureResponseBody Body;
+        
+        public InsertTemperatureResponse() {
+        }
+        
+        public InsertTemperatureResponse(TestConsole.WebService1.InsertTemperatureResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class InsertTemperatureResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public TestConsole.WebService1.tipoError InsertTemperatureResult;
+        
+        public InsertTemperatureResponseBody() {
+        }
+        
+        public InsertTemperatureResponseBody(TestConsole.WebService1.tipoError InsertTemperatureResult) {
+            this.InsertTemperatureResult = InsertTemperatureResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModifyTemperatureRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModifyTemperature", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.ModifyTemperatureRequestBody Body;
+        
+        public ModifyTemperatureRequest() {
+        }
+        
+        public ModifyTemperatureRequest(TestConsole.WebService1.ModifyTemperatureRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class ModifyTemperatureRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TestConsole.WebService1.VOTemperature vot;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public TestConsole.WebService1.VOTemperature votNueva;
+        
+        public ModifyTemperatureRequestBody() {
+        }
+        
+        public ModifyTemperatureRequestBody(TestConsole.WebService1.VOTemperature vot, TestConsole.WebService1.VOTemperature votNueva) {
+            this.vot = vot;
+            this.votNueva = votNueva;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ModifyTemperatureResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ModifyTemperatureResponse", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.ModifyTemperatureResponseBody Body;
+        
+        public ModifyTemperatureResponse() {
+        }
+        
+        public ModifyTemperatureResponse(TestConsole.WebService1.ModifyTemperatureResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class ModifyTemperatureResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public TestConsole.WebService1.tipoError ModifyTemperatureResult;
+        
+        public ModifyTemperatureResponseBody() {
+        }
+        
+        public ModifyTemperatureResponseBody(TestConsole.WebService1.tipoError ModifyTemperatureResult) {
+            this.ModifyTemperatureResult = ModifyTemperatureResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteCityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteCity", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.DeleteCityRequestBody Body;
+        
+        public DeleteCityRequest() {
+        }
+        
+        public DeleteCityRequest(TestConsole.WebService1.DeleteCityRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class DeleteCityRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string city;
+        
+        public DeleteCityRequestBody() {
+        }
+        
+        public DeleteCityRequestBody(string city) {
+            this.city = city;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteCityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteCityResponse", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.DeleteCityResponseBody Body;
+        
+        public DeleteCityResponse() {
+        }
+        
+        public DeleteCityResponse(TestConsole.WebService1.DeleteCityResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class DeleteCityResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public TestConsole.WebService1.tipoError DeleteCityResult;
+        
+        public DeleteCityResponseBody() {
+        }
+        
+        public DeleteCityResponseBody(TestConsole.WebService1.tipoError DeleteCityResult) {
+            this.DeleteCityResult = DeleteCityResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteTemperatureRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteTemperature", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.DeleteTemperatureRequestBody Body;
+        
+        public DeleteTemperatureRequest() {
+        }
+        
+        public DeleteTemperatureRequest(TestConsole.WebService1.DeleteTemperatureRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class DeleteTemperatureRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string city;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public System.DateTime fecha;
+        
+        public DeleteTemperatureRequestBody() {
+        }
+        
+        public DeleteTemperatureRequestBody(string city, System.DateTime fecha) {
+            this.city = city;
+            this.fecha = fecha;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class DeleteTemperatureResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteTemperatureResponse", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.DeleteTemperatureResponseBody Body;
+        
+        public DeleteTemperatureResponse() {
+        }
+        
+        public DeleteTemperatureResponse(TestConsole.WebService1.DeleteTemperatureResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class DeleteTemperatureResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public TestConsole.WebService1.tipoError DeleteTemperatureResult;
+        
+        public DeleteTemperatureResponseBody() {
+        }
+        
+        public DeleteTemperatureResponseBody(TestConsole.WebService1.tipoError DeleteTemperatureResult) {
+            this.DeleteTemperatureResult = DeleteTemperatureResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListTempreaturesByCityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListTempreaturesByCity", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.ListTempreaturesByCityRequestBody Body;
+        
+        public ListTempreaturesByCityRequest() {
+        }
+        
+        public ListTempreaturesByCityRequest(TestConsole.WebService1.ListTempreaturesByCityRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class ListTempreaturesByCityRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string city;
+        
+        public ListTempreaturesByCityRequestBody() {
+        }
+        
+        public ListTempreaturesByCityRequestBody(string city) {
+            this.city = city;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class ListTempreaturesByCityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListTempreaturesByCityResponse", Namespace="http://localhost", Order=0)]
+        public TestConsole.WebService1.ListTempreaturesByCityResponseBody Body;
+        
+        public ListTempreaturesByCityResponse() {
+        }
+        
+        public ListTempreaturesByCityResponse(TestConsole.WebService1.ListTempreaturesByCityResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://localhost")]
+    public partial class ListTempreaturesByCityResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public TestConsole.WebService1.VOTemperature[] ListTempreaturesByCityResult;
+        
+        public ListTempreaturesByCityResponseBody() {
+        }
+        
+        public ListTempreaturesByCityResponseBody(TestConsole.WebService1.VOTemperature[] ListTempreaturesByCityResult) {
+            this.ListTempreaturesByCityResult = ListTempreaturesByCityResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : TestConsole.WebService1.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -123,9 +682,10 @@ namespace TestConsole.WebService1 {
             return base.Channel.getTemperature(request);
         }
         
-        public double getTemperature(string city) {
+        public double getTemperature(System.DateTime day, string city) {
             TestConsole.WebService1.getTemperatureRequest inValue = new TestConsole.WebService1.getTemperatureRequest();
             inValue.Body = new TestConsole.WebService1.getTemperatureRequestBody();
+            inValue.Body.day = day;
             inValue.Body.city = city;
             TestConsole.WebService1.getTemperatureResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).getTemperature(inValue);
             return retVal.Body.getTemperatureResult;
@@ -136,11 +696,166 @@ namespace TestConsole.WebService1 {
             return base.Channel.getTemperatureAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TestConsole.WebService1.getTemperatureResponse> getTemperatureAsync(string city) {
+        public System.Threading.Tasks.Task<TestConsole.WebService1.getTemperatureResponse> getTemperatureAsync(System.DateTime day, string city) {
             TestConsole.WebService1.getTemperatureRequest inValue = new TestConsole.WebService1.getTemperatureRequest();
             inValue.Body = new TestConsole.WebService1.getTemperatureRequestBody();
+            inValue.Body.day = day;
             inValue.Body.city = city;
             return ((TestConsole.WebService1.WebService1Soap)(this)).getTemperatureAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TestConsole.WebService1.InsertCityResponse TestConsole.WebService1.WebService1Soap.InsertCity(TestConsole.WebService1.InsertCityRequest request) {
+            return base.Channel.InsertCity(request);
+        }
+        
+        public TestConsole.WebService1.tipoError InsertCity(string city) {
+            TestConsole.WebService1.InsertCityRequest inValue = new TestConsole.WebService1.InsertCityRequest();
+            inValue.Body = new TestConsole.WebService1.InsertCityRequestBody();
+            inValue.Body.city = city;
+            TestConsole.WebService1.InsertCityResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).InsertCity(inValue);
+            return retVal.Body.InsertCityResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TestConsole.WebService1.InsertCityResponse> TestConsole.WebService1.WebService1Soap.InsertCityAsync(TestConsole.WebService1.InsertCityRequest request) {
+            return base.Channel.InsertCityAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TestConsole.WebService1.InsertCityResponse> InsertCityAsync(string city) {
+            TestConsole.WebService1.InsertCityRequest inValue = new TestConsole.WebService1.InsertCityRequest();
+            inValue.Body = new TestConsole.WebService1.InsertCityRequestBody();
+            inValue.Body.city = city;
+            return ((TestConsole.WebService1.WebService1Soap)(this)).InsertCityAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TestConsole.WebService1.InsertTemperatureResponse TestConsole.WebService1.WebService1Soap.InsertTemperature(TestConsole.WebService1.InsertTemperatureRequest request) {
+            return base.Channel.InsertTemperature(request);
+        }
+        
+        public TestConsole.WebService1.tipoError InsertTemperature(TestConsole.WebService1.VOTemperature vot) {
+            TestConsole.WebService1.InsertTemperatureRequest inValue = new TestConsole.WebService1.InsertTemperatureRequest();
+            inValue.Body = new TestConsole.WebService1.InsertTemperatureRequestBody();
+            inValue.Body.vot = vot;
+            TestConsole.WebService1.InsertTemperatureResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).InsertTemperature(inValue);
+            return retVal.Body.InsertTemperatureResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TestConsole.WebService1.InsertTemperatureResponse> TestConsole.WebService1.WebService1Soap.InsertTemperatureAsync(TestConsole.WebService1.InsertTemperatureRequest request) {
+            return base.Channel.InsertTemperatureAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TestConsole.WebService1.InsertTemperatureResponse> InsertTemperatureAsync(TestConsole.WebService1.VOTemperature vot) {
+            TestConsole.WebService1.InsertTemperatureRequest inValue = new TestConsole.WebService1.InsertTemperatureRequest();
+            inValue.Body = new TestConsole.WebService1.InsertTemperatureRequestBody();
+            inValue.Body.vot = vot;
+            return ((TestConsole.WebService1.WebService1Soap)(this)).InsertTemperatureAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TestConsole.WebService1.ModifyTemperatureResponse TestConsole.WebService1.WebService1Soap.ModifyTemperature(TestConsole.WebService1.ModifyTemperatureRequest request) {
+            return base.Channel.ModifyTemperature(request);
+        }
+        
+        public TestConsole.WebService1.tipoError ModifyTemperature(TestConsole.WebService1.VOTemperature vot, TestConsole.WebService1.VOTemperature votNueva) {
+            TestConsole.WebService1.ModifyTemperatureRequest inValue = new TestConsole.WebService1.ModifyTemperatureRequest();
+            inValue.Body = new TestConsole.WebService1.ModifyTemperatureRequestBody();
+            inValue.Body.vot = vot;
+            inValue.Body.votNueva = votNueva;
+            TestConsole.WebService1.ModifyTemperatureResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).ModifyTemperature(inValue);
+            return retVal.Body.ModifyTemperatureResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TestConsole.WebService1.ModifyTemperatureResponse> TestConsole.WebService1.WebService1Soap.ModifyTemperatureAsync(TestConsole.WebService1.ModifyTemperatureRequest request) {
+            return base.Channel.ModifyTemperatureAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TestConsole.WebService1.ModifyTemperatureResponse> ModifyTemperatureAsync(TestConsole.WebService1.VOTemperature vot, TestConsole.WebService1.VOTemperature votNueva) {
+            TestConsole.WebService1.ModifyTemperatureRequest inValue = new TestConsole.WebService1.ModifyTemperatureRequest();
+            inValue.Body = new TestConsole.WebService1.ModifyTemperatureRequestBody();
+            inValue.Body.vot = vot;
+            inValue.Body.votNueva = votNueva;
+            return ((TestConsole.WebService1.WebService1Soap)(this)).ModifyTemperatureAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TestConsole.WebService1.DeleteCityResponse TestConsole.WebService1.WebService1Soap.DeleteCity(TestConsole.WebService1.DeleteCityRequest request) {
+            return base.Channel.DeleteCity(request);
+        }
+        
+        public TestConsole.WebService1.tipoError DeleteCity(string city) {
+            TestConsole.WebService1.DeleteCityRequest inValue = new TestConsole.WebService1.DeleteCityRequest();
+            inValue.Body = new TestConsole.WebService1.DeleteCityRequestBody();
+            inValue.Body.city = city;
+            TestConsole.WebService1.DeleteCityResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).DeleteCity(inValue);
+            return retVal.Body.DeleteCityResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TestConsole.WebService1.DeleteCityResponse> TestConsole.WebService1.WebService1Soap.DeleteCityAsync(TestConsole.WebService1.DeleteCityRequest request) {
+            return base.Channel.DeleteCityAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TestConsole.WebService1.DeleteCityResponse> DeleteCityAsync(string city) {
+            TestConsole.WebService1.DeleteCityRequest inValue = new TestConsole.WebService1.DeleteCityRequest();
+            inValue.Body = new TestConsole.WebService1.DeleteCityRequestBody();
+            inValue.Body.city = city;
+            return ((TestConsole.WebService1.WebService1Soap)(this)).DeleteCityAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TestConsole.WebService1.DeleteTemperatureResponse TestConsole.WebService1.WebService1Soap.DeleteTemperature(TestConsole.WebService1.DeleteTemperatureRequest request) {
+            return base.Channel.DeleteTemperature(request);
+        }
+        
+        public TestConsole.WebService1.tipoError DeleteTemperature(string city, System.DateTime fecha) {
+            TestConsole.WebService1.DeleteTemperatureRequest inValue = new TestConsole.WebService1.DeleteTemperatureRequest();
+            inValue.Body = new TestConsole.WebService1.DeleteTemperatureRequestBody();
+            inValue.Body.city = city;
+            inValue.Body.fecha = fecha;
+            TestConsole.WebService1.DeleteTemperatureResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).DeleteTemperature(inValue);
+            return retVal.Body.DeleteTemperatureResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TestConsole.WebService1.DeleteTemperatureResponse> TestConsole.WebService1.WebService1Soap.DeleteTemperatureAsync(TestConsole.WebService1.DeleteTemperatureRequest request) {
+            return base.Channel.DeleteTemperatureAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TestConsole.WebService1.DeleteTemperatureResponse> DeleteTemperatureAsync(string city, System.DateTime fecha) {
+            TestConsole.WebService1.DeleteTemperatureRequest inValue = new TestConsole.WebService1.DeleteTemperatureRequest();
+            inValue.Body = new TestConsole.WebService1.DeleteTemperatureRequestBody();
+            inValue.Body.city = city;
+            inValue.Body.fecha = fecha;
+            return ((TestConsole.WebService1.WebService1Soap)(this)).DeleteTemperatureAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TestConsole.WebService1.ListTempreaturesByCityResponse TestConsole.WebService1.WebService1Soap.ListTempreaturesByCity(TestConsole.WebService1.ListTempreaturesByCityRequest request) {
+            return base.Channel.ListTempreaturesByCity(request);
+        }
+        
+        public TestConsole.WebService1.VOTemperature[] ListTempreaturesByCity(string city) {
+            TestConsole.WebService1.ListTempreaturesByCityRequest inValue = new TestConsole.WebService1.ListTempreaturesByCityRequest();
+            inValue.Body = new TestConsole.WebService1.ListTempreaturesByCityRequestBody();
+            inValue.Body.city = city;
+            TestConsole.WebService1.ListTempreaturesByCityResponse retVal = ((TestConsole.WebService1.WebService1Soap)(this)).ListTempreaturesByCity(inValue);
+            return retVal.Body.ListTempreaturesByCityResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TestConsole.WebService1.ListTempreaturesByCityResponse> TestConsole.WebService1.WebService1Soap.ListTempreaturesByCityAsync(TestConsole.WebService1.ListTempreaturesByCityRequest request) {
+            return base.Channel.ListTempreaturesByCityAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TestConsole.WebService1.ListTempreaturesByCityResponse> ListTempreaturesByCityAsync(string city) {
+            TestConsole.WebService1.ListTempreaturesByCityRequest inValue = new TestConsole.WebService1.ListTempreaturesByCityRequest();
+            inValue.Body = new TestConsole.WebService1.ListTempreaturesByCityRequestBody();
+            inValue.Body.city = city;
+            return ((TestConsole.WebService1.WebService1Soap)(this)).ListTempreaturesByCityAsync(inValue);
         }
     }
 }
