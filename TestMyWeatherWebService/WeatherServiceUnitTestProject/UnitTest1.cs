@@ -14,6 +14,7 @@ namespace WeatherServiceUnitTestProject
         {
             WebService1SoapClient ws = new ServiceReference1.WebService1SoapClient();
             List<VOTemperature> lista = ws.ListTempreaturesByCity("Montevideo").ToList<VOTemperature>();
+
             Assert.AreEqual(lista.Count, 5);
 
         }
