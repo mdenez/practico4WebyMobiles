@@ -27,7 +27,7 @@ jobs:
       shell: powershell
       
     - name: Actual directory
-      run: echo ls
+      run: echo ${ls}
       shell: powershell
       
 # practico4WebyMobiles/WebServicesExamples/WebServicesExamples.sln 
