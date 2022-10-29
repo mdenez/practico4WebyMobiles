@@ -22,9 +22,20 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-        
+    - name: Display the path
+      run: echo ${env:PATH}
+      shell: powershell
+      
+    - name: Actual directory
+      run: echo ls
+      shell: powershell
+      
+# practico4WebyMobiles/WebServicesExamples/WebServicesExamples.sln 
     - name: Build with dotnet
-      run: dotnet build --configuration Release
+      #run: dotnet build --configuration Release
+      
+
+      run: dotnet build --practico4WebyMobiles/WebServicesExamples/WebServicesExamples.sln Release
  
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/WebServicesExamples
