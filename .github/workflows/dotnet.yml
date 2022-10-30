@@ -35,7 +35,7 @@ jobs:
       #run: dotnet build --configuration Release
       
 
-      run: dotnet build --practico4WebyMobiles/WebServicesExamples/
+      run: dotnet build
  
     - name: dotnet publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/WebServicesExamples
